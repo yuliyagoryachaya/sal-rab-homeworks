@@ -7,13 +7,10 @@ function calcShipping(sum, min, shipping) {
 
     let shippingSum
 
-    if (productsSum == 0) {
+    if (productsSum == 0 || productsSum >= freeShippingMinSum) {
         shippingSum = 0
     }
-    if (productsSum >= freeShippingMinSum) {
-        shippingSum = 0
-    }
-    if (productsSum >0 && < freeShippingMinSum) {
+    if ((productsSum >0) && (< freeShippingMinSum)) {
         shippingSum = shippingPrice
     }
 
@@ -34,7 +31,6 @@ function calcDiscount(sum, min, discount) {
         discountSum = (discountPart / 100 * productsSum)
         }else{
         discountSum = 0
-        }
     }
     // Конец решения задания №2.2.
 
